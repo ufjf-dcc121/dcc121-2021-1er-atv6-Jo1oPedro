@@ -491,7 +491,7 @@
       }
       for(let i = 0; i< celulas.length; i++)
       {
-          if(celulas[i].classList == "" && celulas[i].id == "")
+          if(celulas[i].classList == "")
           {
             celulas[i].classList.add('Parece');
           }
@@ -499,7 +499,26 @@
       function exibeClasse(event) {
         let target = event.target;
         console.log(target.classList)
+        if(target.classList == 'Parece')
+        {
+          target.classList.remove('Parece');
+        }  
+        else if(target.classList == "")
+        {
+          target.classList.add('Orc');
         }
+        else if(target.classList == 'Orc')
+        {
+          target.classList.add('Tesouro');
+          target.classList.remove('Orc');
+        }
+        else if(target.classList == 'Tesouro')
+        {
+          target.classList.add('Parece');
+          target.classList.remove('Tesouro');
+        }
+        console.log(target.classList);
+      }
 
     </script>
   </body>
