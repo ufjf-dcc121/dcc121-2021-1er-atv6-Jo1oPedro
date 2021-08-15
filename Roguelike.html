@@ -484,6 +484,11 @@
     </article>
     <script>
       const celulas = document.querySelectorAll("td");
+      console.log(celulas);
+      for(let i = 0; i< celulas.length; i++)
+      {
+        celulas[i].addEventListener('click', exibeClasse, false);
+      }
       for(let i = 0; i< celulas.length; i++)
       {
           if(celulas[i].classList == "" && celulas[i].id == "")
@@ -491,6 +496,11 @@
             celulas[i].classList.add('Parece');
           }
       }
+      function exibeClasse(event) {
+        let target = event.target;
+        console.log(target.classList)
+        }
+
     </script>
   </body>
 </html>
